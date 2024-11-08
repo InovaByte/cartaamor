@@ -7,7 +7,7 @@
 
 body {
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,13 +19,15 @@ body {
 
 .carta {
     background: white;
-    padding: 40px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    max-width: 600px;
+    width: 90%;
+    max-width: 400px;
     position: relative;
     animation: float 6s ease-in-out infinite;
     display: none;
+    margin: 0 auto;
 }
 
 .carta.active {
@@ -34,26 +36,31 @@ body {
 
 .navigation {
     position: fixed;
-    bottom: 20px;
+    bottom: 10px;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     z-index: 1000;
+    width: 100%;
+    justify-content: center;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .nav-button {
-    padding: 10px 20px;
+    padding: 8px 16px;
     background: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     font-family: 'Dancing Script', cursive;
-    font-size: 1.2em;
+    font-size: 1em;
     color: #ff6b6b;
     transition: transform 0.3s ease;
+    white-space: nowrap;
 }
 
-.nav-button:hover {
-    transform: scale(1.1);
+.nav-button:active {
+    transform: scale(0.95);
 }
 
 @keyframes float {
@@ -61,7 +68,7 @@ body {
         transform: translatey(0px);
     }
     50% {
-        transform: translatey(-20px);
+        transform: translatey(-10px);
     }
     100% {
         transform: translatey(0px);
@@ -70,10 +77,10 @@ body {
 
 .coracao {
     position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 60px;
-    height: 60px;
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
     animation: batida 1s ease-in-out infinite;
 }
 
@@ -91,23 +98,42 @@ body {
 
 h1 {
     color: #ff6b6b;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 2em;
+    margin-bottom: 15px;
     text-align: center;
 }
 
 p {
-    font-size: 1.8em;
-    line-height: 1.6;
+    font-size: 1.4em;
+    line-height: 1.4;
     color: #555;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .assinatura {
     text-align: right;
-    font-size: 2em;
+    font-size: 1.6em;
     color: #ff6b6b;
-    margin-top: 30px;
+    margin-top: 20px;
+}
+
+@media (max-width: 320px) {
+    .nav-button {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    p {
+        font-size: 1.2em;
+    }
+    
+    .assinatura {
+        font-size: 1.4em;
+    }
 }
 </style>
 </head>
